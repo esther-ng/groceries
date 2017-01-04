@@ -201,6 +201,7 @@ DEPENDENCIES
   jquery-rails
   minitest-reporters
   minitest-vcr
+  nokogiri
   pg
   rails (= 4.2.7)
   rails-api

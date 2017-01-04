@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :categories, except: [:new, :edit]
+  get 'products/search', to: 'products#search', as: 'product_search'
+  get 'products/:id', to: 'products#show', as: 'product'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,5 +1,5 @@
-require 'httparty'
-require 'nokogiri'
+# require 'httparty'
+# require 'nokogiri'
 
 class QfcData
   BASE_URL = "https://wklyads.qfc.com/flyers/qfc-weekly/grid_view/chrome=broadsheet&store_code=00849&type=2?locale=en-US&type=1"
@@ -20,6 +20,7 @@ class QfcData
 
   def self.parse_to_model
     items_array = self.get_data
+    raw_array = []
     items_array.each do |item|
       raw = {}
       raw["name"] = item["name"]
@@ -30,11 +31,14 @@ class QfcData
       raw["img_url"] = item["large_image_url"]
       raw["description"] = item["description"]
       raw["offer_item"] = item["flyer_item_id"]
-      raw["store_id"] =
+      raw["store_id"] = 1
+      raw_array << raw
       # raw["category_id"] =
-      product = Product.new # parse it to the model here
-
+      # product = Product.new(raw) # parse it to the model here, doesn't actually work, is looking for uninitialized constant QfcData::Product (NameError)
+      # product.save
     end
+    return raw_array
   end
-
 end
+
+# QfcData.parse_to_model

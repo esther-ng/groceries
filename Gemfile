@@ -55,6 +55,7 @@ end
 
 group :test do
   gem 'simplecov'
+  gem 'whenever-test'
 end
 
 # group :production do

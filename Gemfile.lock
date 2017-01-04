@@ -188,6 +188,8 @@ GEM
       hashdiff
     whenever (0.9.7)
       chronic (>= 0.6.3)
+    whenever-test (1.0.1)
+      whenever
 
 PLATFORMS
   ruby
@@ -215,6 +217,7 @@ DEPENDENCIES
   web-console (~> 2.0)
   webmock
   whenever
+  whenever-test
 
 BUNDLED WITH
    1.13.5

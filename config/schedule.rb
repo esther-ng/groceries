@@ -18,3 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+every :wednesday, :at => '2pm' do
+  rake "populate:qfc"
+  rake "populate:sfw"
+  Rails.logger.info("Whenever run #{Time.now}")
+end

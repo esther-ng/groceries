@@ -9,19 +9,20 @@
 categories = [
   "Produce",
   "Meat & Seafood",
+  "Bread & Bakery",
   "Canned & Packaged",
-  "Beverages",
-  "Snacks",
-  "Paper, Cleaning & Home",
+  "Grains, Pasta & Sauces",
   "Dairy, Eggs & Cheese",
   "Frozen",
+  "Breakfast",
   "Deli",
+  "Snacks",
+  "Beverages",
+  "Wine, Beer & Spirits",
+  "Paper, Cleaning & Home",
   "Personal Care & Health",
   "Baby",
-  "Wine, Beer & Spirits",
-  "Bread & Bakery",
-  "Breakfast",
-  "Grains, Pasta & Sauces",
+  "Pet Care"
   "Other"
 ]
 

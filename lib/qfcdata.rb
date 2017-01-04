@@ -22,17 +22,16 @@ class QfcData
     items_array = self.get_data
     items_array.each do |item|
       raw = {}
-      raw["name"] =
-      raw["sale_price"] =
-      raw["reg_price"] =
-      raw["conditions"] =
-      raw["valid_from"] =
-      raw["valid_til"] =
-      raw["img_url"] =
-      raw["description"] =
-      raw["offer_item"] =
+      raw["name"] = item["name"]
+      raw["sale_price"] = ((item["current_price"].to_f) * 100).to_i
+      raw["conditions"] = item["price_text"]
+      raw["valid_from"] = DateTime.strptime(item["valid_from"], '%Y-%m-%d')
+      raw["valid_til"] = DateTime.strptime(item["valid_to"]+"23:59:59", '%Y-%m-%d%H:%M:%S')
+      raw["img_url"] = item["large_image_url"]
+      raw["description"] = item["description"]
+      raw["offer_item"] = item["flyer_item_id"]
       raw["store_id"] =
-      raw["category_id"] =
+      # raw["category_id"] =
       product = Product.new # parse it to the model here
 
     end

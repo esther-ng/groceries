@@ -25,6 +25,28 @@ categories = [
   "Other"
 ]
 
+stores = [
+  {
+    "name" => "QFC",
+    "address" => "2707 Rainier Ave S",
+    "city" => "Seattle",
+    "state" => "WA",
+    "zip" => "98144",
+    "phone" => "(206) 725-2418"
+  },
+  {
+    "name" => "Safeway",
+    "address" => "3820 Rainier Ave S",
+    "city" => "Seattle",
+    "state" => "WA",
+    "zip" => "98118"
+  }
+]
+
+stores.each do |s|
+  Store.create(s)
+end
+
 categories.each do |c|
   Category.create(name: c)
 end

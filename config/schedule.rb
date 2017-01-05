@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every :wednesday, :at => '12am' do
+every :thursday, :at => '3:35pm' do
   rake "purge:expired"
   rake "populate:qfc"
   rake "populate:safeway"

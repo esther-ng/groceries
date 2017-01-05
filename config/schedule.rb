@@ -21,6 +21,6 @@
 every :wednesday, :at => '12am' do
   rake "purge:expired"
   rake "populate:qfc"
-  rake "populate:sfw"
-  Rails.logger.info("Whenever run #{Time.now}")
+  rake "populate:safeway"
+  # Rails.logger.info("Whenever run #{Time.now}")
 end

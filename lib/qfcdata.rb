@@ -2,13 +2,15 @@ require 'httparty'
 require 'nokogiri'
 
 class QfcData
-  BASE_URL = "https://wklyads.qfc.com/flyers/qfc-weekly/grid_view/chrome=broadsheet&store_code=00849&type=2?locale=en-US&type=1"
+  BASE_URL = "http://wklyads.qfc.com/flyers/qfc-weekly/grid_view/chrome=broadsheet&store_code=00849&type=2?locale=en-US&type=1"
 
 
   def self.get_data
     response = HTTParty.get(BASE_URL) # get raw html
+    puts "What you got: #{response}"
     nokorized = Nokogiri::HTML(response.body) # convert to nokogiri doc
     textified = nokorized.css('script')[6].text # find text inside target script
+    puts "Nokogiri #{textified}"
     splitified = textified.split(/(;)(?=(?:[^"]|"[^"]*")*$)/) # split js lines
     flyer_data = splitified[40]
     flyer_data.gsub!("\n", "") # remove new line characters

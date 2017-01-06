@@ -60,6 +60,7 @@ group :test do
 end
 
 group :production do
+  ruby '2.3.1'
   gem 'pg'
   gem 'rails_12factor'
 end

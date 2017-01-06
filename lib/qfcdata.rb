@@ -2,7 +2,7 @@ require 'httparty'
 require 'nokogiri'
 
 class QfcData
-  BASE_URL = "http://wklyads.qfc.com/flyers/qfc-weekly/grid_view/chrome=broadsheet&store_code=00849&type=2?locale=en-US&type=1"
+  BASE_URL = "https://wklyads.qfc.com/flyers/qfc-weekly/grid_view/chrome=broadsheet&store_code=00849&type=2?locale=en-US&type=1"
 
 
   def self.get_data

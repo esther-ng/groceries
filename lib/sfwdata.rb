@@ -50,6 +50,9 @@ private
   end
 
 end
+
+puts SfwData.parse_to_model
+
 # def get_categ(categories)
 #   cat = categories[0]["CategoryName"].split(" ")
 #   if Category.

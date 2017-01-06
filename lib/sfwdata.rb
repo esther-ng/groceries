@@ -1,3 +1,6 @@
+require 'httparty'
+require 'json'
+
 class SfwData
   BASE_URL = "http://api.safeway.com/api/circularsodata/v5/Offers()?$filter=Stores/any(s:s/StoreNumber%20eq%20%271508%27)&$expand=Categories"
 
@@ -22,6 +25,7 @@ class SfwData
       # product = Product.new(raw) # parse it to the model here, doesn't actually work, is looking for uninitialized constant QfcData::Product (NameError)
       # product.save
     end
+    File.open('/Users/user/ada/groceries/seed_files/sfw.json', 'w') { |f| f.write(raw_array.to_json)}
     return raw_array
   end
 
@@ -51,7 +55,7 @@ private
 
 end
 
-puts SfwData.parse_to_model
+SfwData.parse_to_model
 
 # def get_categ(categories)
 #   cat = categories[0]["CategoryName"].split(" ")

@@ -6,6 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+data = File.read('/Users/user/ada/groceries/seed_files/qfc.json')
+hashq = JSON.parse(data)
+Product.create(hashq)
+
+datas = File.read('/Users/user/ada/groceries/seed_files/sfw.json')
+hashs = JSON.parse(data)
+Product.create(hashs)
+
 categories = [
   "Produce",
   "Meat & Seafood",

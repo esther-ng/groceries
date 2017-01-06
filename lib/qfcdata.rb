@@ -39,8 +39,9 @@ class QfcData
       # product = Product.new(raw) # parse it to the model here, doesn't actually work, is looking for uninitialized constant QfcData::Product (NameError)
       # product.save
     end
+    File.open('/Users/user/ada/groceries/seed_files/qfc.json', 'w') { |f| f.write(raw_array.to_json)}
     return raw_array
   end
 end
 
-# QfcData.parse_to_model
+QfcData.parse_to_model

@@ -1,5 +1,5 @@
-require 'httparty'
-require 'nokogiri'
+# require 'httparty'
+# require 'nokogiri'
 
 class QfcData
   BASE_URL = "https://wklyads.qfc.com/flyers/qfc-weekly/grid_view/chrome=broadsheet&store_code=00849&type=2?locale=en-US&type=1"
@@ -44,4 +44,4 @@ class QfcData
   end
 end
 
-QfcData.parse_to_model
+# QfcData.parse_to_model

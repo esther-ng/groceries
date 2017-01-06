@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
 
-  def search
-    render json: Store.search(params[:query])
+  def index
+    render json: Store.all
   end
 end

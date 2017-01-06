@@ -22,7 +22,7 @@ categories = [
   "Paper, Cleaning & Home",
   "Personal Care & Health",
   "Baby",
-  "Pet Care"
+  "Pet Care",
   "Other"
 ]
 

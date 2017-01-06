@@ -1,3 +1,5 @@
+require 'httparty'
+
 class SfwData
   BASE_URL = "http://api.safeway.com/api/circularsodata/v5/Offers()?$filter=Stores/any(s:s/StoreNumber%20eq%20%271508%27)&$expand=Categories"
 

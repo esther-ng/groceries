@@ -18,7 +18,7 @@ class SfwData
       raw["valid_til"] = DateTime.strptime(item["EndDate"], "%Y-%m-%dT%H:%M:%S")
       raw["img_url"] = "http://ct.safeway.com/api/circularimages/v5/images/#{item["DefaultImage"]}/300/jpg"
       raw["description"] = item["BodyCopy"]
-      raw["offer_item"] = item["OfferId"]
+      raw["offer_item"] = item["OfferId"].to_i
       raw["store_id"] = 2
       raw_array << raw
       # raw["category_id"] =

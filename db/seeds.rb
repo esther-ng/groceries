@@ -11,7 +11,7 @@ hashq = JSON.parse(data)
 Product.create(hashq)
 
 datas = File.read('/home/deploy/groceries/current/seed_files/sfw.json')
-hashs = JSON.parse(data)
+hashs = JSON.parse(datas)
 Product.create(hashs)
 
 categories = [

@@ -12,8 +12,9 @@ class QfcData
     textified = nokorized.css('script')[6].text # find text inside target script
     puts "Nokogiri #{textified}"
     splitified = textified.split(/(;)(?=(?:[^"]|"[^"]*")*$)/) # split js lines
-    flyer_data = splitified[40]
+    flyer_data = splitified[40] + splitified[42]
     flyer_data.gsub!("\n", "") # remove new line characters
+    # flyer_data.gsub!(";", "") # remove semicolons line characters
     flyer_data.gsub!("        window['flyerData'] = ", "") # remove leading variable assignment
     puts flyer_data
     parsed = JSON.parse(flyer_data) # necessary?

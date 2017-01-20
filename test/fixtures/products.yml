@@ -4,8 +4,37 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: {
+    name: "Blueberries or Blackberries",
+    sale_price: 400,
+    conditions: "With Card",
+    valid_from: "2017-01-18 00:00:00",
+    valid_til: "2017-01-31 23:59:59",
+    img_url: "https://f.wishabi.net/page_items/74976540/14845393...",
+    description: "6 oz",
+    store_id: 1
+  }
 # column: value
 #
-two: {}
+two: {
+    name: "Cookies",
+    sale_price: 200,
+    conditions: "With Card",
+    valid_from: "2017-01-18 00:00:00",
+    valid_til: "2017-01-31 23:59:59",
+    img_url: "https://f.wishabi.net/page_items/74976540/14845393...",
+    description: "6 oz",
+    store_id: 2
+  }
+
+three: {
+    name: "Oreo Cookies",
+    sale_price: 300,
+    conditions: "With Card",
+    valid_from: "2017-01-18 00:00:00",
+    valid_til: "2017-01-31 23:59:59",
+    img_url: "https://f.wishabi.net/page_items/74976540/14845393...",
+    description: "6 oz",
+    store_id: 2
+  }
 #  column: value

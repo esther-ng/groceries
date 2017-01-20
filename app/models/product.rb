@@ -5,6 +5,6 @@ class Product < ActiveRecord::Base
   validates :offer_item, :uniqueness => true
 
   def self.search(query, store)
-    Product.where('name LIKE ? AND store_id = ?', "%#{query}%", store)
+    Product.where('name LIKE ? AND store_id = ?', "%#{query.capitalize}%", store)
   end
 end

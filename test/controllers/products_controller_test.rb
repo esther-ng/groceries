@@ -61,4 +61,11 @@ class ProductsControllerTest < ActionController::TestCase
     assert_equal 1, body.length
     compare_products(products(:one), body.first)
   end
+
+  test "#search returns two word matches" do
+    body = send_search_request('oreo cookies', 2)
+
+    assert_equal 1, body.length
+    compare_products(products(:three), body.first)
+  end
 end

@@ -7,16 +7,16 @@ class QfcData
 
   def self.get_data
     response = HTTParty.get(BASE_URL) # get raw html
-    puts "What you got: #{response}"
+    # puts "What you got: #{response}"
     nokorized = Nokogiri::HTML(response.body) # convert to nokogiri doc
     textified = nokorized.css('script')[6].text # find text inside target script
-    puts "Nokogiri #{textified}"
+    # puts "Nokogiri #{textified}"
     splitified = textified.split(/(;)(?=(?:[^"]|"[^"]*")*$)/) # split js lines
     flyer_data = splitified[40] + splitified[42]
     flyer_data.gsub!("\n", "") # remove new line characters
     # flyer_data.gsub!(";", "") # remove semicolons line characters
     flyer_data.gsub!("        window['flyerData'] = ", "") # remove leading variable assignment
-    puts flyer_data
+    # puts flyer_data
     parsed = JSON.parse(flyer_data) # necessary?
     items_array = parsed["items"]
   end

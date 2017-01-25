@@ -7,6 +7,6 @@ class Product < ActiveRecord::Base
   def self.search(query, store)
     format_query = query.split.map(&:capitalize).join(' ')
     puts format_query
-    Product.where("name LIKE ? AND store_id = ?", "%#{format_query}%", "#{store}").order('reg_price', 'sale_price')
+    Product.where("name LIKE ? AND store_id = ?", "%#{format_query}%", "#{store}").order('sale_price', 'reg_price')
   end
 end

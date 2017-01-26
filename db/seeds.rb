@@ -6,21 +6,25 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-data = File.read('/home/deploy/groceries/current/seed_files/qfc.json')
-hashq = JSON.parse(data)
-Product.create(hashq)
+# data = File.read('/home/deploy/groceries/current/seed_files/qfc.json')
+# hashq = JSON.parse(data)
+# Product.create(hashq)
+#
+# datas = File.read('/home/deploy/groceries/current/seed_files/sfw.json')
+# hashs = JSON.parse(datas)
+# Product.create(hashs)
+#
+# dataqr = File.read('/home/deploy/groceries/current/seed_files/qfc_import.json')
+# qfcreg = JSON.parse(dataqr)
+# Product.create(qfcreg)
+#
+# datasr = File.read('/home/deploy/groceries/current/seed_files/safeway_import.json')
+# sfwreg = JSON.parse(datasr)
+# Product.create(sfwreg)
 
-datas = File.read('/home/deploy/groceries/current/seed_files/sfw.json')
-hashs = JSON.parse(datas)
-Product.create(hashs)
-
-dataqr = File.read('/home/deploy/groceries/current/seed_files/qfc_import.json')
-qfcreg = JSON.parse(dataqr)
-Product.create(qfcreg)
-
-datasr = File.read('/home/deploy/groceries/current/seed_files/safeway_import.json')
-sfwreg = JSON.parse(datasr)
-Product.create(sfwreg)
+datasr2 = File.read('/home/deploy/groceries/current/seed_files/safeway_import2.json')
+sfwreg2 = JSON.parse(datasr2)
+Product.create(sfwreg2)
 #
 # data = File.read('/Users/user/ada/groceries/seed_files/qfc.json')
 # hashq = JSON.parse(data)

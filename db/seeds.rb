@@ -1,48 +1,41 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+### FOR PRODUCTION ###
 
-# data = File.read('/home/deploy/groceries/current/seed_files/qfc.json')
-# hashq = JSON.parse(data)
-# Product.create(hashq)
-#
-# datas = File.read('/home/deploy/groceries/current/seed_files/sfw.json')
-# hashs = JSON.parse(datas)
-# Product.create(hashs)
-#
-# dataqr = File.read('/home/deploy/groceries/current/seed_files/qfc_import.json')
-# qfcreg = JSON.parse(dataqr)
-# Product.create(qfcreg)
-#
-# datasr = File.read('/home/deploy/groceries/current/seed_files/safeway_import.json')
-# sfwreg = JSON.parse(datasr)
-# Product.create(sfwreg)
+# QFC SALE DATA #
+
+data = File.read('/home/deploy/groceries/current/seed_files/qfc.json')
+hashq = JSON.parse(data)
+Product.create(hashq)
+
+# SAFEWAY SALE DATA #
+
+datas = File.read('/home/deploy/groceries/current/seed_files/sfw.json')
+hashs = JSON.parse(datas)
+Product.create(hashs)
+
+# QFC REGULAR PRICING AS OF 1/24/17 #
+
+dataqr = File.read('/home/deploy/groceries/current/seed_files/qfc_import.json')
+qfcreg = JSON.parse(dataqr)
+Product.create(qfcreg)
+
+# SAFEWAY REGULAR PRICING PART 1 #
+
+datasr = File.read('/home/deploy/groceries/current/seed_files/safeway_import.json')
+sfwreg = JSON.parse(datasr)
+Product.create(sfwreg)
+
+# SAFEWAY REGULAR PRICING PART 2 #
 
 datasr2 = File.read('/home/deploy/groceries/current/seed_files/safeway_import2.json')
 sfwreg2 = JSON.parse(datasr2)
 Product.create(sfwreg2)
-#
+
+### FOR DEVELOPMENT ###
+
 # data = File.read('/Users/user/ada/groceries/seed_files/qfc.json')
 # hashq = JSON.parse(data)
-# Product.create(hashq)
-#
-# datas = File.read('/Users/user/ada/groceries/seed_files/sfw.json')
-# hashs = JSON.parse(datas)
-# Product.create(hashs)
-#
-# dataqr = File.read('/Users/user/ada/groceries/seed_files/qfc_import.json')
-# qfcreg = JSON.parse(dataqr)
-# Product.create(qfcreg)
+# # Product.create(hashq)
 
-# datasr = File.read('/Users/user/ada/groceries/seed_files/safeway_import.json')
-# sfwreg = JSON.parse(datasr)
-# sfwreg.each do |p|
-#   Product.create(p)
-# end
 categories = [
   "Produce",
   "Meat & Seafood",

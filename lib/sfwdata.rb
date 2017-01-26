@@ -42,20 +42,28 @@ private
     price = 0
     quantity = 1
     take = false
-    word_array.each do |word|
-      if word.include?("\u00a2")
-        return price = (word[0..1]).to_i
+    if text.include?("when you buy") do
+      word_array.each do |word|
+        if word[0] == "$"
+          price = ((word.delete("$").to_f)*100).to_i
+        end
       end
-      if word[0] == "$"
-        price = ((word.delete("$").to_f)*100).to_i
+      return price
+    else
+      word_array.each do |word|
+        if word.include?("\u00a2")
+          return price = (word[0..1]).to_i
+        end
+        if word[0] == "$"
+          price = ((word.delete("$").to_f)*100).to_i
+        end
+        if word[0].to_i != 0
+          quantity = word.to_i
+        end
       end
-      if word[0].to_i != 0
-        quantity = word.to_i
-      end
+      return price/quantity
     end
-    return price/quantity
   end
-
 end
 
 # SfwData.parse_to_model

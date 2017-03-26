@@ -6,7 +6,7 @@ This Rails API was created to provide scraped data from two supermarkets for use
 
 To request a search of each store's offerings and receive an array of search results, send requests in the following format:
 
-http://indechick.com/products/search?query=search+term&store=store_id
+https://evening-sea-83050.herokuapp.com/products/search?query=search+term&store=store_id
 
 where store_id is 1 for QFC and 2 for Safeway.
 
